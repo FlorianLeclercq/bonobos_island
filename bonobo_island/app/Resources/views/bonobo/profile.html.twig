@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bonobo Island</title>
+</head>
+
+<body>
+	<h1>Here is the profile of {{ user.getUsername() }} ! If you like it and didn't add him yet, go for it !</h1>
+    <li><b>His Age :</b> {{ user.getAge() }}</li>
+    <li><b>His Family :</b> {{ user.getFamily() }}</li>
+    <li><b>His Breed :</b> {{ user.getBreed() }}</li>
+    <li><b>His Favorite Food :</b> {{ user.getFavoriteFood() }}</li>
+    </br>
+    
+    {{ form_start(formFriend) }}
+    {{ form_widget(formFriend) }}
+    {{ form_end(formFriend) }}
+    
+    {{ form_start(formMenu) }}
+    {{ form_widget(formMenu) }}
+    {{ form_end(formMenu) }}
+</body>
+</html>

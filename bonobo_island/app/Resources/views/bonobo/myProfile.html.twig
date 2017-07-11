@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Bonobo Island</title>
+</head>
+
+<body>
+	<h1>Here is your profile, {{ user.getUsername() }} ! Update it !</h1>
+    {% if not modifying %}
+        <li><b>Your Age :</b> {{ user.getAge() }}</li>
+        <li><b>Your Family :</b> {{ user.getFamily() }}</li>
+        <li><b>Your Breed :</b> {{ user.getBreed() }}</li>
+        <li><b>Your Favorite Food :</b> {{ user.getFavoriteFood() }}</li>
+    {% endif %}
+    </br>
+    
+    {{ form_start(formModify) }}
+    {{ form_widget(formModify) }}
+    {{ form_end(formModify) }}
+    
+    {{ form_start(formMenu) }}
+    {{ form_widget(formMenu) }}
+    {{ form_end(formMenu) }}
+    
+    </br>
+    <h3>Number of friends : {{ count }}</h3>
+    </br>
+    {% for friend in friends %}
+        <li><a href="{{ path('profile', {'friendUsername': friend.username }) }}">{{ friend.username }}</a></li>
+    {% endfor %}
+</body>
+</html>
